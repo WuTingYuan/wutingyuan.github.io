@@ -1,38 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Hello Friend</title>
+    <title>我有一個地瓜酥他每天都在蘇</title>
     
     
     
     <link>https://blog.ty-wu.com/</link>
-    <description>Recent content on Hello Friend</description>
+    <description>Recent content on 我有一個地瓜酥他每天都在蘇</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>© 2022-2022 ty_wu . All rights reserved.</copyright>
     <lastBuildDate>Sat, 24 Dec 2022 21:13:57 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.ty-wu.com/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>About</title>
-      <link>https://blog.ty-wu.com/about/</link>
-      <pubDate>Sat, 24 Dec 2022 21:42:42 +0800</pubDate>
-      
-      <guid>https://blog.ty-wu.com/about/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-          
-          
-        
-        </description>
-    </item>
     
     <item>
       <title>Showcase</title>
@@ -55,7 +36,7 @@
     </item>
     
     <item>
-      <title>我有一個地瓜我有一個地瓜酥他每天都在蘇酥他每天都在蘇</title>
+      <title>我有一個地瓜酥他每天都在蘇123</title>
       <link>https://blog.ty-wu.com/posts/test/</link>
       <pubDate>Sat, 24 Dec 2022 21:13:57 +0800</pubDate>
       
@@ -67,7 +48,27 @@
         
         
         
-          &#34;Hello, friend?&#34; That&#39;s lame. Maybe I should give you a name?
+          地瓜酥#來一包地瓜酥吧！
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>地瓜酥胡了</title>
+      <link>https://blog.ty-wu.com/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.ty-wu.com/about/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          這是一包地瓜酥
           
         
         </description>
