@@ -10,10 +10,30 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2022-2023 ty_wu . All rights reserved.</copyright>
-    <lastBuildDate>Sat, 24 Dec 2022 21:13:57 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 14 Jan 2023 15:32:12 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.ty-wu.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>RotuerOS 設定 WireGuard VPN</title>
+      <link>https://blog.ty-wu.com/posts/rosconfigwg/</link>
+      <pubDate>Sat, 14 Jan 2023 15:32:12 +0800</pubDate>
+      
+      <guid>https://blog.ty-wu.com/posts/rosconfigwg/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          新購了 RB5009UPr+S+IN 替換使用了 9 年的 RB450G，順便將 VPN 從 NAS 的 OpenVPN 切換到 RouterOS 的 Wireguard，嚐鮮一下新功能
+          
+        
+        </description>
+    </item>
     
     <item>
       <title>Showcase</title>
@@ -43,7 +63,8 @@
       <guid>https://blog.ty-wu.com/posts/test/</guid>
       <description>
         
-          &lt;img src=&#34;https://blog.ty-wu.com/img/hello.jpg&#34;/&gt;
+          
+          
           
         
         

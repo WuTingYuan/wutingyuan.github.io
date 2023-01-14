@@ -10,9 +10,90 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2022-2023 ty_wu . All rights reserved.</copyright>
+    <lastBuildDate>Sat, 14 Jan 2023 15:32:12 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.ty-wu.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Mikrotik</title>
+      <link>https://blog.ty-wu.com/tags/mikrotik/</link>
+      <pubDate>Sat, 14 Jan 2023 15:32:12 +0800</pubDate>
+      
+      <guid>https://blog.ty-wu.com/tags/mikrotik/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>RouterOS</title>
+      <link>https://blog.ty-wu.com/tags/routeros/</link>
+      <pubDate>Sat, 14 Jan 2023 15:32:12 +0800</pubDate>
+      
+      <guid>https://blog.ty-wu.com/tags/routeros/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>VPN</title>
+      <link>https://blog.ty-wu.com/tags/vpn/</link>
+      <pubDate>Sat, 14 Jan 2023 15:32:12 +0800</pubDate>
+      
+      <guid>https://blog.ty-wu.com/tags/vpn/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>WireGuard</title>
+      <link>https://blog.ty-wu.com/tags/wireguard/</link>
+      <pubDate>Sat, 14 Jan 2023 15:32:12 +0800</pubDate>
+      
+      <guid>https://blog.ty-wu.com/tags/wireguard/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
     
   </channel>
 </rss>
