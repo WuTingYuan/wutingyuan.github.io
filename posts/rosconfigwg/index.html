@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-tw">
   <head>
     
       <title>
@@ -11,8 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content="新購了 RB5009UPr&#43;S&#43;IN 替換使用了 9 年的 RB450G，順便將 VPN 從 NAS 的 OpenVPN 切換到 RouterOS 的 Wireguard，嚐鮮一下新功能
-RouterOS#CLI建立 Wiregaurd 介面（Public Key 會自動產生）/interface wireguard add listen-port=51820 mtu=1420 name=wireguard1 CLI開放 Firewall 允許存許 WireGuard/ip firewall filter add action=accept chain=input comment=WireGuard dst-port=51820 protocol=udp CLI開放 Firewall 允許 WireGuard 網段到內網（雙向）/ip firewall filter add action=accept chain=forward dst-address=192.168.1.0/24 src-address=10.0.0.0/24 /ip firewall filter add action=accept chain=forward dst-address=10.0.0.0/24 src-address=192.168.1.0/24 CLI建立 WireGuard 網段 （設定完 network 會自動產升）/ip address add address=10."
+  content="新購了 RB5009UPr&#43;S&#43;IN 替換使用了 9 年的 RB450G，順便將 VPN 從 NAS 的 OpenVPN 切換到 RouterOS 的 Wireguard，嚐鮮一下新功能 RouterOS # CLI 建立 Wiregaurd 介面（Public Key 會自動產生"
 />
 <meta
   name="keywords"
@@ -91,11 +90,15 @@ RouterOS#CLI建立 Wiregaurd 介面（Public Key 會自動產生）/interfac
     
       
         
-          <li><a href="/about">About</a></li>
+          <li><a href="/archive">Archive</a></li>
         
       
         
           <li><a href="/tags">Tags</a></li>
+        
+      
+        
+          <li><a href="/about">About</a></li>
         
       
       
@@ -105,11 +108,15 @@ RouterOS#CLI建立 Wiregaurd 介面（Public Key 會自動產生）/interfac
   <ul class="menu__inner menu__inner--mobile">
     
       
-        <li><a href="/about">About</a></li>
+        <li><a href="/archive">Archive</a></li>
       
     
       
         <li><a href="/tags">Tags</a></li>
+      
+    
+      
+        <li><a href="/about">About</a></li>
       
     
   </ul>
@@ -217,8 +224,8 @@ RouterOS#CLI建立 Wiregaurd 介面（Public Key 會自動產生）/interfac
 
 
   <div class="collapsable-code">
-    <input id="675813249" type="checkbox" checked />
-    <label for="675813249">
+    <input id="856193247" type="checkbox" checked />
+    <label for="856193247">
       <span class="collapsable-code__language">CLI</span>
       <span class="collapsable-code__title">開放 Firewall 允許存許 WireGuard</span>
       <span class="collapsable-code__toggle" data-label-expand="顯示" data-label-collapse="隱藏"></span>
@@ -235,8 +242,8 @@ RouterOS#CLI建立 Wiregaurd 介面（Public Key 會自動產生）/interfac
 
 
   <div class="collapsable-code">
-    <input id="359718462" type="checkbox" checked />
-    <label for="359718462">
+    <input id="349178625" type="checkbox" checked />
+    <label for="349178625">
       <span class="collapsable-code__language">CLI</span>
       <span class="collapsable-code__title">開放 Firewall 允許 WireGuard 網段到內網（雙向）</span>
       <span class="collapsable-code__toggle" data-label-expand="顯示" data-label-collapse="隱藏"></span>
@@ -254,8 +261,8 @@ RouterOS#CLI建立 Wiregaurd 介面（Public Key 會自動產生）/interfac
 
 
   <div class="collapsable-code">
-    <input id="476193825" type="checkbox" checked />
-    <label for="476193825">
+    <input id="362549187" type="checkbox" checked />
+    <label for="362549187">
       <span class="collapsable-code__language">CLI</span>
       <span class="collapsable-code__title">建立 WireGuard 網段 （設定完 network 會自動產升）</span>
       <span class="collapsable-code__toggle" data-label-expand="顯示" data-label-collapse="隱藏"></span>
@@ -272,8 +279,8 @@ RouterOS#CLI建立 Wiregaurd 介面（Public Key 會自動產生）/interfac
 
 
   <div class="collapsable-code">
-    <input id="396147852" type="checkbox" checked />
-    <label for="396147852">
+    <input id="872913654" type="checkbox" checked />
+    <label for="872913654">
       <span class="collapsable-code__language">CLI</span>
       <span class="collapsable-code__title">Client 設定完成後取得 Client 的 Public Key</span>
       <span class="collapsable-code__toggle" data-label-expand="顯示" data-label-collapse="隱藏"></span>
@@ -297,8 +304,8 @@ RouterOS#CLI建立 Wiregaurd 介面（Public Key 會自動產生）/interfac
 
 
   <div class="collapsable-code">
-    <input id="832147695" type="checkbox" checked />
-    <label for="832147695">
+    <input id="286931574" type="checkbox" checked />
+    <label for="286931574">
       <span class="collapsable-code__language">Shell</span>
       <span class="collapsable-code__title">產生 Private Key</span>
       <span class="collapsable-code__toggle" data-label-expand="顯示" data-label-collapse="隱藏"></span>
@@ -315,8 +322,8 @@ $ wg genkey
 
 
   <div class="collapsable-code">
-    <input id="245678139" type="checkbox" checked />
-    <label for="245678139">
+    <input id="749825631" type="checkbox" checked />
+    <label for="749825631">
       <span class="collapsable-code__language">Toml</span>
       <span class="collapsable-code__title">wireguard.conf</span>
       <span class="collapsable-code__toggle" data-label-expand="顯示" data-label-collapse="隱藏"></span>
@@ -409,7 +416,7 @@ Endpoint = example.com:51820
         <footer class="footer">
   <div class="footer__inner">
     
-      <div class="copyright copyright--user">© 2022-2023 ty_wu . All rights reserved.</div>
+      <div class="copyright copyright--user">Copyright © 2022-2023 ty_wu | MIT License</div>
       
   </div>
 </footer>
