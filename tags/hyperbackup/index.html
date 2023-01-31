@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="zh-tw">
   <head>
-	<meta name="generator" content="Hugo 0.109.0">
     
       <title>
+        HyperBackup ::
         我有一個地瓜酥他每天都在蘇
       </title>
     
@@ -18,7 +18,7 @@
   content=""
 />
 <meta name="robots" content="noodp" />
-<link rel="canonical" href="https://blog.ty-wu.com/" />
+<link rel="canonical" href="https://blog.ty-wu.com/tags/hyperbackup/" />
 
 
 
@@ -44,19 +44,19 @@
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="我有一個地瓜酥他每天都在蘇"/>
+<meta name="twitter:title" content="HyperBackup"/>
 <meta name="twitter:description" content=""/>
 
 
 
-<meta property="og:title" content="我有一個地瓜酥他每天都在蘇" />
+<meta property="og:title" content="HyperBackup" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://blog.ty-wu.com/" /><meta property="og:site_name" content="我有一個地瓜酥他每天都在蘇" />
+<meta property="og:url" content="https://blog.ty-wu.com/tags/hyperbackup/" /><meta property="og:site_name" content="我有一個地瓜酥他每天都在蘇" />
 
 
 
-<link rel="alternate" type="application/rss+xml" href="/index.xml" title="我有一個地瓜酥他每天都在蘇" />
+<link rel="alternate" type="application/rss+xml" href="/tags/hyperbackup/index.xml" title="我有一個地瓜酥他每天都在蘇" />
 
 
 
@@ -152,130 +152,53 @@
 
       <div class="content">
         
-  
-  
-
-  
-  
-    
-  
-  
-
-  
-
   <div class="posts">
     
-    <article class="post on-list">
-      <h1 class="post-title"><a href="https://blog.ty-wu.com/posts/rosconsole/">RouterOS 使用 USB Console</a></h1>
-      <div class="post-meta">
-        
-          <time class="post-date">
-            2023-01-31
-          </time>
+      <article class="post on-list">
+        <h1 class="post-title"><a href="https://blog.ty-wu.com/posts/synohyperbksharepoint/">Synology HyperBackup 備份到 OneDrive for Business</a></h1>
+        <div class="post-meta">
+          
+            <time class="post-date">
+              2023-01-23
+            </time>
+
+            
+          
+          
+
 
           
+        </div>
+
+        
+          <span class="post-tags">
+            
+              <a href="https://blog.ty-wu.com/tags/synology/">#Synology</a>&nbsp;
+            
+              <a href="https://blog.ty-wu.com/tags/hyperbackup/">#HyperBackup</a>&nbsp;
+            
+              <a href="https://blog.ty-wu.com/tags/onedrive/">#OneDrive</a>&nbsp;
+            
+          </span>
         
 
         
 
-        
-      </div>
-
-      
-        <span class="post-tags">
+        <div class="post-content">
           
-            <a href="https://blog.ty-wu.com/tags/mikrotik/">#Mikrotik</a>&nbsp;
+            
+              1. 部署 SharePoint 的 WebDAV 代理 # Docker 部署 SharePoint 的 WebDAV 代理 $ docker run \ --name sharepoint-proxy \ -d \ -p 3000:3000 \ -e PROXY_TARGET=https://example-my.sharepoint.net/ \ --restart always \ skleeschulte/basic-to-sharepoint-auth-http-proxy:v0.0.1 2. 建立備份任務 # 備份目的地：WebDAV 伺服器位址：http://1
+            
           
-            <a href="https://blog.ty-wu.com/tags/routeros/">#RouterOS</a>&nbsp;
-          
-            <a href="https://blog.ty-wu.com/tags/console/">#Console</a>&nbsp;
-          
-            <a href="https://blog.ty-wu.com/tags/rs232/">#RS232</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
+        </div>
         
-          設定防火牆的過程中總是會有不小心將自己鎖在外面的時候，像是設定到 Input 全部 Drop 之類的蠢事，在 RB450G 上還有 RS232 可以接線進 Console 來救援，但在 RB5009 上 RS232 直接被拔掉了，取而代之的是 USB Console，紀錄一下怎麼透過 USB 轉 ttl 的模組來連接電腦
+          <div>
+            <a class="read-more button" href="/posts/synohyperbksharepoint/"
+              >Read more →</a
+            >
+          </div>
         
-      </div>
-      
-        <div><a class="read-more button" href="/posts/rosconsole/">Read more →</a></div>
-      
-    </article>
-    
-    <article class="post on-list">
-      <h1 class="post-title"><a href="https://blog.ty-wu.com/posts/rosconfigwg/">RotuerOS 設定 WireGuard VPN</a></h1>
-      <div class="post-meta">
-        
-          <time class="post-date">
-            2023-01-14
-          </time>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-        <span class="post-tags">
-          
-            <a href="https://blog.ty-wu.com/tags/mikrotik/">#Mikrotik</a>&nbsp;
-          
-            <a href="https://blog.ty-wu.com/tags/routeros/">#RouterOS</a>&nbsp;
-          
-            <a href="https://blog.ty-wu.com/tags/wireguard/">#WireGuard</a>&nbsp;
-          
-            <a href="https://blog.ty-wu.com/tags/vpn/">#VPN</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          新購了 RB5009UPr+S+IN 替換使用了 9 年的 RB450G，順便將 VPN 從 NAS 的 OpenVPN 切換到 RouterOS 的 Wireguard，嚐鮮一下新功能
-        
-      </div>
-      
-        <div><a class="read-more button" href="/posts/rosconfigwg/">Read more →</a></div>
-      
-    </article>
-    
-    <article class="post on-list">
-      <h1 class="post-title"><a href="https://blog.ty-wu.com/posts/test/">我有一個地瓜酥他每天都在蘇</a></h1>
-      <div class="post-meta">
-        
-          <time class="post-date">
-            2022-12-24
-          </time>
-
-          
-        
-
-        
-
-        
-      </div>
-
-      
-
-      
-
-      <div class="post-content">
-        
-          來一包地瓜酥吧！
-        
-      </div>
-      
-    </article>
+      </article>
     
     <div class="pagination">
   <div class="pagination__buttons">

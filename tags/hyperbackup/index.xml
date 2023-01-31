@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>HyperBackup on 我有一個地瓜酥他每天都在蘇</title>
+    
+    
+    
+    <link>https://blog.ty-wu.com/tags/hyperbackup/</link>
+    <description>Recent content in HyperBackup on 我有一個地瓜酥他每天都在蘇</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <copyright>Copyright © 2022-2023 ty_wu | MIT License</copyright>
+    <lastBuildDate>Mon, 23 Jan 2023 19:59:42 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.ty-wu.com/tags/hyperbackup/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Synology HyperBackup 備份到 OneDrive for Business</title>
+      <link>https://blog.ty-wu.com/posts/synohyperbksharepoint/</link>
+      <pubDate>Mon, 23 Jan 2023 19:59:42 +0800</pubDate>
+      
+      <guid>https://blog.ty-wu.com/posts/synohyperbksharepoint/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          1. 部署 SharePoint 的 WebDAV 代理 # Docker 部署 SharePoint 的 WebDAV 代理 $ docker run \ --name sharepoint-proxy \ -d \ -p 3000:3000 \ -e PROXY_TARGET=https://example-my.sharepoint.net/ \ --restart always \ skleeschulte/basic-to-sharepoint-auth-http-proxy:v0.0.1 2. 建立備份任務 # 備份目的地：WebDAV 伺服器位址：http://1
+          
+        
+        </description>
+    </item>
+    
+  </channel>
+</rss>

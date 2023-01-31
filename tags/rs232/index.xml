@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>RouterOS on 我有一個地瓜酥他每天都在蘇</title>
+    <title>RS232 on 我有一個地瓜酥他每天都在蘇</title>
     
     
     
-    <link>https://blog.ty-wu.com/tags/routeros/</link>
-    <description>Recent content in RouterOS on 我有一個地瓜酥他每天都在蘇</description>
+    <link>https://blog.ty-wu.com/tags/rs232/</link>
+    <description>Recent content in RS232 on 我有一個地瓜酥他每天都在蘇</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <copyright>Copyright © 2022-2023 ty_wu | MIT License</copyright>
     <lastBuildDate>Tue, 31 Jan 2023 14:33:50 +0800</lastBuildDate>
     
-	<atom:link href="https://blog.ty-wu.com/tags/routeros/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.ty-wu.com/tags/rs232/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -30,26 +30,6 @@
         
         
           設定防火牆的過程中總是會有不小心將自己鎖在外面的時候，像是設定到 Input 全部 Drop 之類的蠢事，在 RB450G 上還有 RS232 可以接線進 Console 來救援，但在 RB5009 上 RS232 直接被拔掉了，取而代之的是 USB Console，紀錄一下怎麼透過 USB 轉 ttl 的模組來連接電腦
-          
-        
-        </description>
-    </item>
-    
-    <item>
-      <title>RotuerOS 設定 WireGuard VPN</title>
-      <link>https://blog.ty-wu.com/posts/rosconfigwg/</link>
-      <pubDate>Sat, 14 Jan 2023 15:32:12 +0800</pubDate>
-      
-      <guid>https://blog.ty-wu.com/posts/rosconfigwg/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-          新購了 RB5009UPr+S+IN 替換使用了 9 年的 RB450G，順便將 VPN 從 NAS 的 OpenVPN 切換到 RouterOS 的 Wireguard，嚐鮮一下新功能
           
         
         </description>

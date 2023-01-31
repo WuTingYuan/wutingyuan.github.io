@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>OneDrive for Business on 我有一個地瓜酥他每天都在蘇</title>
+    
+    
+    
+    <link>https://blog.ty-wu.com/tags/onedrive-for-business/</link>
+    <description>Recent content in OneDrive for Business on 我有一個地瓜酥他每天都在蘇</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <copyright>Copyright © 2022-2023 ty_wu | MIT License</copyright>
+    <lastBuildDate>Mon, 23 Jan 2023 19:59:42 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.ty-wu.com/tags/onedrive-for-business/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Synology Hyper-Backup 備份到商務用 OneDrive</title>
+      <link>https://blog.ty-wu.com/posts/synohyperbksharepoint/</link>
+      <pubDate>Mon, 23 Jan 2023 19:59:42 +0800</pubDate>
+      
+      <guid>https://blog.ty-wu.com/posts/synohyperbksharepoint/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Synology 的備份軟體 Hyper Backup 原生沒有支援備份到商務用 OneDrive，想要備份就得另外想辦法，網路上找了一下，發現有解決方案， 是透過 WebDAV 加上在 Docker 中架設 Auth Proxy 的方式連接到商務用 OneDrive 做備份，簡單設定後就能備份了🥳
+          
+        
+        </description>
+    </item>
+    
+  </channel>
+</rss>
