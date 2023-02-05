@@ -10,10 +10,30 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <copyright>Copyright © 2022-2023 ty_wu | MIT License</copyright>
-    <lastBuildDate>Tue, 31 Jan 2023 14:33:50 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 05 Feb 2023 15:29:23 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.ty-wu.com/tags/mikrotik/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>RotuerOS 設定 DNS over HTTPS</title>
+      <link>https://blog.ty-wu.com/posts/rosconfigdoh/</link>
+      <pubDate>Sun, 05 Feb 2023 15:29:23 +0800</pubDate>
+      
+      <guid>https://blog.ty-wu.com/posts/rosconfigdoh/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          開啟 DNS over HTTPS 功能，讓 DNS 能在傳輸過程中得到加密保護
+          
+        
+        </description>
+    </item>
     
     <item>
       <title>RouterOS 使用 USB Console</title>

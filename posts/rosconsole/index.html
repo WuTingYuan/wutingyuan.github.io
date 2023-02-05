@@ -11,7 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content="前言 # 設定防火牆的過程中總是會有不小心將自己鎖在外面的時候，像是設定到 Input 全部 Drop 之類的蠢事，在 RB450G 上還有 RS232 可以接線進 Console 來救援， 但在 RB5009 上 RS232 直接被拔"
+  content="設定防火牆的過程中總是會有不小心將自己鎖在外面的時候，像是設定到 Input 全部 Drop 之類的蠢事，在 RB450G 上還有 RS232 可以接線進 Console 來救援， 但在 RB5009 上 RS232 直接被拔掉了，"
 />
 <meta
   name="keywords"
@@ -193,21 +193,19 @@
 
     <div class="post-content">
       
-      <h2 id="前言">
-  前言
-  <a href="#%e5%89%8d%e8%a8%80" class="h-anchor" aria-hidden="true">#</a>
-</h2>
-<p>設定防火牆的過程中總是會有不小心將自己鎖在外面的時候，像是設定到 Input 全部 Drop 之類的蠢事，在 RB450G 上還有 RS232 可以接線進 Console 來救援，
+      <p>設定防火牆的過程中總是會有不小心將自己鎖在外面的時候，像是設定到 Input 全部 Drop 之類的蠢事，在 RB450G 上還有 RS232 可以接線進 Console 來救援，
 但在 RB5009 上 RS232 直接被拔掉了，取而代之的是 USB Console，紀錄一下怎麼透過 USB 轉 ttl 的模組來連接電腦
 <img src="/img/rosconsole-rb5009.png" alt="RB5009"></p>
 <h3 id="1準備兩個-usb-to-rs232-ttl-轉接模組然後接線">
   1、準備兩個 USB to RS232 TTL 轉接模組然後接線
   <a href="#1%e6%ba%96%e5%82%99%e5%85%a9%e5%80%8b-usb-to-rs232-ttl-%e8%bd%89%e6%8e%a5%e6%a8%a1%e7%b5%84%e7%84%b6%e5%be%8c%e6%8e%a5%e7%b7%9a" class="h-anchor" aria-hidden="true">#</a>
 </h3>
-<p>GND 接 GND<br>
-TXD 接 RXD<br>
-RXD 接 TXD</p>
-<p><img src="/img/rosconsole-moduleline.png" alt="PortList"></p>
+<ul>
+<li>GND 接 GND</li>
+<li>TXD 接 RXD</li>
+<li>RXD 接 TXD</li>
+</ul>
+<p><img src="/img/rosconsole-moduleline.png" alt="ModuleLine"></p>
 <h3 id="2將其中一個模組插入-rb5009-的-usb-孔後開啟-winbox-在-system--ports-會自動產生-usb1">
   2、將其中一個模組插入 RB5009 的 USB 孔後，開啟 Winbox 在 System → Ports 會自動產生 usb1
   <a href="#2%e5%b0%87%e5%85%b6%e4%b8%ad%e4%b8%80%e5%80%8b%e6%a8%a1%e7%b5%84%e6%8f%92%e5%85%a5-rb5009-%e7%9a%84-usb-%e5%ad%94%e5%be%8c%e9%96%8b%e5%95%9f-winbox-%e5%9c%a8-system--ports-%e6%9c%83%e8%87%aa%e5%8b%95%e7%94%a2%e7%94%9f-usb1" class="h-anchor" aria-hidden="true">#</a>
@@ -222,10 +220,30 @@ RXD 接 TXD</p>
   4、將另一個模組插入電腦 USB 後，用 <a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html">Putty</a> 連接即可
   <a href="#4%e5%b0%87%e5%8f%a6%e4%b8%80%e5%80%8b%e6%a8%a1%e7%b5%84%e6%8f%92%e5%85%a5%e9%9b%bb%e8%85%a6-usb-%e5%be%8c%e7%94%a8-puttyhttpswwwchiarkgreenendorguksgtathamputtylatesthtml-%e9%80%a3%e6%8e%a5%e5%8d%b3%e5%8f%af" class="h-anchor" aria-hidden="true">#</a>
 </h3>
-<p>Connection type 選 Serial<br>
-Serial line 輸入電腦上偵測到的 COM 號碼<br>
-Speed 輸入 115200</p>
+<ul>
+<li>Connection type 選 Serial</li>
+<li>Serial line 輸入電腦上偵測到的 COM 號碼</li>
+<li>Speed 輸入 115200</li>
+</ul>
 <p><img src="/img/rosconsole-putty.png" alt="Putty"></p>
+<hr>
+<h2 id="qa">
+  Q&amp;A
+  <a href="#qa" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<ul>
+<li>
+<p>怎麼知道是哪個 COM Port?<br>
+裝置管理員 -&gt; 連接埠 (COM 和 LPD) -&gt; 拔插 USB 看哪一個 COM 變化就是他了，
+<img src="/img/rosconsole-com.png" alt="COM"></p>
+</li>
+<li>
+<p>COM Port 顯示警告或錯誤怎麼辦?<br>
+通常是安裝驅動程式沒有正確安裝，安裝/更新驅動程式後即可<br>
+<a href="https://www.wch.cn/downloads/CH341SER_EXE.html">CH340/CH341 驅動程式下載</a><br>
+（其他型號 IC 請到各自的網站下載）</p>
+</li>
+</ul>
 
     </div>
     
@@ -238,6 +256,13 @@ Speed 輸入 115200</p>
             <hr />
           </div>
           <div class="pagination__buttons">
+            
+              <span class="button previous">
+                <a href="https://blog.ty-wu.com/posts/rosconfigdoh/">
+                  <span class="button__icon">←</span>
+                  <span class="button__text">RotuerOS 設定 DNS over HTTPS</span>
+                </a>
+              </span>
             
             
               <span class="button next">

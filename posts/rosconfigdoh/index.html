@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+  <head>
+    
+      <title>
+        RotuerOS 設定 DNS over HTTPS ::
+        我有一個地瓜酥他每天都在蘇
+      </title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="開啟 DNS over HTTPS 功能，讓 DNS 能在傳輸過程中得到加密保護 1、下載 CA bundle # CA certificates extracted from Mozilla cacert.pem (直接下載) 2、上傳 CA bundle # 開啟 Winbox 在 Files -&amp;gt; Upload&amp;hellip; 上傳 cacert.pem 3、匯入 CA bundle # 在 Winbox 中 System"
+/>
+<meta
+  name="keywords"
+  content=""
+/>
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="https://blog.ty-wu.com/posts/rosconfigdoh/" />
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/style.css" />
+
+<link rel="stylesheet" href="https://blog.ty-wu.com/style.css" />
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://blog.ty-wu.com/img/apple-touch-icon-144-precomposed.png" />
+<link rel="shortcut icon" href="https://blog.ty-wu.com/img/favicon.png" />
+
+
+<link href="/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="RotuerOS 設定 DNS over HTTPS"/>
+<meta name="twitter:description" content="開啟 DNS over HTTPS 功能，讓 DNS 能在傳輸過程中得到加密保護"/>
+
+
+
+<meta property="og:title" content="RotuerOS 設定 DNS over HTTPS" />
+<meta property="og:description" content="開啟 DNS over HTTPS 功能，讓 DNS 能在傳輸過程中得到加密保護" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.ty-wu.com/posts/rosconfigdoh/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-02-05T15:29:23+08:00" />
+<meta property="article:modified_time" content="2023-02-05T15:29:23+08:00" /><meta property="og:site_name" content="我有一個地瓜酥他每天都在蘇" />
+
+
+
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a
+  href="/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span>
+    <span class="logo__text"
+      >我有一個地瓜酥他每天都在蘇</span
+    >
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/archive">Archive</a></li>
+        
+      
+        
+          <li><a href="/tags">Tags</a></li>
+        
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+      
+      
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/archive">Archive</a></li>
+      
+    
+      
+        <li><a href="/tags">Tags</a></li>
+      
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg
+  class="theme-toggler"
+  width="24"
+  height="24"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"
+  />
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  
+  
+
+  <article class="post">
+    <h1 class="post-title">RotuerOS 設定 DNS over HTTPS</h1>
+    <div class="post-meta">
+      
+        <time class="post-date">
+          2023-02-05
+        </time>
+
+        
+          
+        
+      
+
+      
+
+
+      
+    </div>
+
+    
+      <span class="post-tags">
+        
+          <a href="https://blog.ty-wu.com/tags/mikrotik/">#Mikrotik</a>&nbsp;
+        
+          <a href="https://blog.ty-wu.com/tags/routeros/">#RouterOS</a>&nbsp;
+        
+          <a href="https://blog.ty-wu.com/tags/doh/">#DoH</a>&nbsp;
+        
+          <a href="https://blog.ty-wu.com/tags/dns/">#DNS</a>&nbsp;
+        
+      </span>
+    
+
+    
+
+    <div class="post-content">
+      
+      <p>開啟 DNS over HTTPS 功能，讓 DNS 能在傳輸過程中得到加密保護</p>
+<h2 id="1下載-ca-bundle">
+  1、下載 CA bundle
+  <a href="#1%e4%b8%8b%e8%bc%89-ca-bundle" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p><a href="https://curl.se/docs/caextract.html">CA certificates extracted from Mozilla</a><br>
+<a href="https://curl.se/ca/cacert.pem">cacert.pem (直接下載)</a></p>
+<h2 id="2上傳-ca-bundle">
+  2、上傳 CA bundle
+  <a href="#2%e4%b8%8a%e5%82%b3-ca-bundle" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>開啟 Winbox 在 Files -&gt; Upload&hellip; 上傳 cacert.pem</p>
+<p><img src="/img/rosconfigdoh-uploadca.png" alt="UploadCA"></p>
+<h2 id="3匯入-ca-bundle">
+  3、匯入 CA bundle
+  <a href="#3%e5%8c%af%e5%85%a5-ca-bundle" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>在 Winbox 中 System → Certificates → Import</p>
+<p><img src="/img/rosconfigdoh-importca.png" alt="ImportCA"></p>
+<h2 id="3開啟-doh-功能">
+  3、開啟 DoH 功能
+  <a href="#3%e9%96%8b%e5%95%9f-doh-%e5%8a%9f%e8%83%bd" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>在 Winbox 中 IP → DNS</p>
+<ul>
+<li>Use DoH Server 輸入 <a href="https://cloudflare-dns.com/dns-query">https://cloudflare-dns.com/dns-query</a></li>
+<li>勾選 Verfiy DoH Certificate</li>
+</ul>
+<p><img src="/img/rosconfigdoh-setdoh.png" alt="SetDoH"></p>
+<h2 id="4檢查-doh-運作">
+  4、檢查 DoH 運作
+  <a href="#4%e6%aa%a2%e6%9f%a5-doh-%e9%81%8b%e4%bd%9c" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>開啟 <a href="https://1.1.1.1/help">https://1.1.1.1/help</a> 測試</p>
+<p><img src="/img/rosconfigdoh-dohtest.png" alt="DoHTest"></p>
+
+    </div>
+    
+      
+        <div class="pagination">
+          <div class="pagination__title">
+            <span class="pagination__title-h"
+              >Read other posts</span
+            >
+            <hr />
+          </div>
+          <div class="pagination__buttons">
+            
+            
+              <span class="button next">
+                <a href="https://blog.ty-wu.com/posts/rosconsole/">
+                  <span class="button__text">RouterOS 使用 USB Console</span>
+                  <span class="button__icon">→</span>
+                </a>
+              </span>
+            
+          </div>
+        </div>
+      
+    
+
+    <div class="disqus markdown">
+      <div id="disqus_thread"></div>
+<script>
+    
+
+    
+
+    (function () { 
+        var d = document, s = d.createElement('script');
+        s.src = 'https://ty-wu-com.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by
+        Disqus.</a></noscript>
+    </div>
+
+    
+      
+        
+
+      
+    
+  </article>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">Copyright © 2022-2023 ty_wu | MIT License</div>
+      
+  </div>
+</footer>
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+      
+    </div>
+
+    
+      
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4FMVHC34VH"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-4FMVHC34VH', { 'anonymize_ip': false });
+}
+</script>
+
+    
+  </body>
+</html>
