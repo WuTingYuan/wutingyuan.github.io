@@ -2,6 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://blog.ty-wu.com/tags/hyper-backup/</loc>
+    <lastmod>2023-02-26T19:36:42+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.ty-wu.com/tags/onedrive/</loc>
+    <lastmod>2023-02-26T19:36:42+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.ty-wu.com/tags/onedrive-for-business/</loc>
+    <lastmod>2023-02-26T19:36:42+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.ty-wu.com/posts/</loc>
+    <lastmod>2023-02-26T19:36:42+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.ty-wu.com/tags/synology/</loc>
+    <lastmod>2023-02-26T19:36:42+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.ty-wu.com/posts/synohyperbksharepoint/</loc>
+    <lastmod>2023-02-26T19:36:42+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.ty-wu.com/tags/</loc>
+    <lastmod>2023-02-26T19:36:42+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.ty-wu.com/</loc>
+    <lastmod>2023-02-26T19:36:42+08:00</lastmod>
+  </url><url>
     <loc>https://blog.ty-wu.com/tags/dns/</loc>
     <lastmod>2023-02-05T15:29:23+08:00</lastmod>
   </url><url>
@@ -11,19 +35,10 @@
     <loc>https://blog.ty-wu.com/tags/mikrotik/</loc>
     <lastmod>2023-02-05T15:29:23+08:00</lastmod>
   </url><url>
-    <loc>https://blog.ty-wu.com/posts/</loc>
-    <lastmod>2023-02-05T15:29:23+08:00</lastmod>
-  </url><url>
     <loc>https://blog.ty-wu.com/posts/rosconfigdoh/</loc>
     <lastmod>2023-02-05T15:29:23+08:00</lastmod>
   </url><url>
     <loc>https://blog.ty-wu.com/tags/routeros/</loc>
-    <lastmod>2023-02-05T15:29:23+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.ty-wu.com/tags/</loc>
-    <lastmod>2023-02-05T15:29:23+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.ty-wu.com/</loc>
     <lastmod>2023-02-05T15:29:23+08:00</lastmod>
   </url><url>
     <loc>https://blog.ty-wu.com/tags/console/</loc>

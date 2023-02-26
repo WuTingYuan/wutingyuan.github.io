@@ -10,10 +10,90 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <copyright>Copyright © 2022-2023 ty_wu | MIT License</copyright>
-    <lastBuildDate>Sun, 05 Feb 2023 15:29:23 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 26 Feb 2023 19:36:42 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.ty-wu.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Hyper Backup</title>
+      <link>https://blog.ty-wu.com/tags/hyper-backup/</link>
+      <pubDate>Sun, 26 Feb 2023 19:36:42 +0800</pubDate>
+      
+      <guid>https://blog.ty-wu.com/tags/hyper-backup/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>OneDrive</title>
+      <link>https://blog.ty-wu.com/tags/onedrive/</link>
+      <pubDate>Sun, 26 Feb 2023 19:36:42 +0800</pubDate>
+      
+      <guid>https://blog.ty-wu.com/tags/onedrive/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>OneDrive for Business</title>
+      <link>https://blog.ty-wu.com/tags/onedrive-for-business/</link>
+      <pubDate>Sun, 26 Feb 2023 19:36:42 +0800</pubDate>
+      
+      <guid>https://blog.ty-wu.com/tags/onedrive-for-business/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Synology</title>
+      <link>https://blog.ty-wu.com/tags/synology/</link>
+      <pubDate>Sun, 26 Feb 2023 19:36:42 +0800</pubDate>
+      
+      <guid>https://blog.ty-wu.com/tags/synology/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
     
     <item>
       <title>DNS</title>

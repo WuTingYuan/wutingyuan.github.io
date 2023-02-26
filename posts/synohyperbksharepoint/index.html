@@ -11,7 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content="Synology 的備份軟體 Hyper Backup 原生沒有支援備份到商務用 OneDrive，想要備份就得另外想辦法，網路上找了一下，發現有解決方案， 是透過 WebDAV 加上在 Docker 中架設 Auth Proxy"
+  content="Synology 的備份軟體 Hyper Backup 原生沒有支援備份到商務用 OneDrive，想要備份就得另外想辦法，網路上找了一下，發現有解決方案， 在 Hyper Backup 選擇 WebDAV 方式，並在 Docker 中"
 />
 <meta
   name="keywords"
@@ -45,16 +45,16 @@
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Synology Hyper-Backup 備份到商務用 OneDrive"/>
-<meta name="twitter:description" content="Synology 的備份軟體 Hyper Backup 原生沒有支援備份到商務用 OneDrive，想要備份就得另外想辦法，網路上找了一下，發現有解決方案， 是透過 WebDAV 加上在 Docker 中架設 Auth Proxy 的方式連接到商務用 OneDrive 做備份，簡單設定後就能備份了🥳"/>
+<meta name="twitter:description" content="Synology 的備份軟體 Hyper Backup 原生沒有支援備份到商務用 OneDrive，想要備份就得另外想辦法，網路上找了一下，發現有解決方案， 在 Hyper Backup 選擇 WebDAV 方式，並在 Docker 中佈署 sharepoint-proxy 的方式連接到商務用 OneDrive 做備份，設定後就能使用了🥳"/>
 
 
 
 <meta property="og:title" content="Synology Hyper-Backup 備份到商務用 OneDrive" />
-<meta property="og:description" content="Synology 的備份軟體 Hyper Backup 原生沒有支援備份到商務用 OneDrive，想要備份就得另外想辦法，網路上找了一下，發現有解決方案， 是透過 WebDAV 加上在 Docker 中架設 Auth Proxy 的方式連接到商務用 OneDrive 做備份，簡單設定後就能備份了🥳" />
+<meta property="og:description" content="Synology 的備份軟體 Hyper Backup 原生沒有支援備份到商務用 OneDrive，想要備份就得另外想辦法，網路上找了一下，發現有解決方案， 在 Hyper Backup 選擇 WebDAV 方式，並在 Docker 中佈署 sharepoint-proxy 的方式連接到商務用 OneDrive 做備份，設定後就能使用了🥳" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.ty-wu.com/posts/synohyperbksharepoint/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2023-01-23T19:59:42+08:00" />
-<meta property="article:modified_time" content="2023-01-23T19:59:42+08:00" /><meta property="og:site_name" content="我有一個地瓜酥他每天都在蘇" />
+<meta property="article:published_time" content="2023-02-26T19:36:42+08:00" />
+<meta property="article:modified_time" content="2023-02-26T19:36:42+08:00" /><meta property="og:site_name" content="我有一個地瓜酥他每天都在蘇" />
 
 
 
@@ -161,7 +161,7 @@
     <div class="post-meta">
       
         <time class="post-date">
-          2023-01-23
+          2023-02-26
         </time>
 
         
@@ -194,21 +194,26 @@
     <div class="post-content">
       
       <p>Synology 的備份軟體 Hyper Backup 原生沒有支援備份到商務用 OneDrive，想要備份就得另外想辦法，網路上找了一下，發現有解決方案，
-是透過 WebDAV 加上在 Docker 中架設 Auth Proxy 的方式連接到商務用 OneDrive 做備份，簡單設定後就能備份了🥳</p>
-<h2 id="1-部署-sharepoint-的-webdav-代理">
-  1. 部署 SharePoint 的 WebDAV 代理
-  <a href="#1-%e9%83%a8%e7%bd%b2-sharepoint-%e7%9a%84-webdav-%e4%bb%a3%e7%90%86" class="h-anchor" aria-hidden="true">#</a>
+在 Hyper Backup 選擇 WebDAV 方式，並在 Docker 中佈署 sharepoint-proxy 的方式連接到商務用 OneDrive 做備份，設定後就能使用了🥳</p>
+<h2 id="1-網域">
+  1. 網域
+  <a href="#1-%e7%b6%b2%e5%9f%9f" class="h-anchor" aria-hidden="true">#</a>
 </h2>
-<h3 id="1-1-透過-docker-指令建立">
-  1-1. 透過 Docker 指令建立
-  <a href="#1-1-%e9%80%8f%e9%81%8e-docker-%e6%8c%87%e4%bb%a4%e5%bb%ba%e7%ab%8b" class="h-anchor" aria-hidden="true">#</a>
-</h3>
+<ul>
+<li>網域名稱 <code>example</code>.onmicrosoft.com，對應 <code>&lt;Domain_Name&gt;</code></li>
+<li>網域帳號 <code>admin</code>@example.onmicrosoft.com，對應 <code>&lt;UserName&gt;</code></li>
+</ul>
+<h2 id="2-部署-sharepoint-的-webdav-代理">
+  2. 部署 SharePoint 的 WebDAV 代理
+  <a href="#2-%e9%83%a8%e7%bd%b2-sharepoint-%e7%9a%84-webdav-%e4%bb%a3%e7%90%86" class="h-anchor" aria-hidden="true">#</a>
+</h2>
+<p>使用 Docker 指令或 Docker Compose 建立</p>
 
 
 
   <div class="collapsable-code">
-    <input id="921573486" type="checkbox" checked />
-    <label for="921573486">
+    <input id="872593164" type="checkbox" checked />
+    <label for="872593164">
       <span class="collapsable-code__language">Shell</span>
       <span class="collapsable-code__title">Docker Shell</span>
       <span class="collapsable-code__toggle" data-label-expand="顯示" data-label-collapse="隱藏"></span>
@@ -218,23 +223,19 @@
     --name sharepoint-proxy \
     -d \
     -p 3000:3000 \
-    -e PROXY_TARGET=https://example-my.sharepoint.net/ \
+    -e PROXY_TARGET=https://&lt;Domain_Name&gt;-my.sharepoint.net/ \
     --restart always \
     skleeschulte/basic-to-sharepoint-auth-http-proxy:v0.0.1
 </code></pre>
   </div>
 
 
-<h3 id="1-2-使用-docker-compose-建立">
-  1-2. 使用 docker Compose 建立
-  <a href="#1-2-%e4%bd%bf%e7%94%a8-docker-compose-%e5%bb%ba%e7%ab%8b" class="h-anchor" aria-hidden="true">#</a>
-</h3>
 
 
 
   <div class="collapsable-code">
-    <input id="537984162" type="checkbox" checked />
-    <label for="537984162">
+    <input id="614387529" type="checkbox" checked />
+    <label for="614387529">
       <span class="collapsable-code__language">Yaml</span>
       <span class="collapsable-code__title">docker-compose.yml</span>
       <span class="collapsable-code__toggle" data-label-expand="顯示" data-label-collapse="隱藏"></span>
@@ -245,7 +246,7 @@
         container_name: basic-to-sharepoint-auth-http-proxy
         image: skleeschulte/basic-to-sharepoint-auth-http-proxy:v0.0.1
         environment:
-          - &#34;PROXY_TARGET=https://example-my.sharepoint.net/&#34;
+          - &#34;PROXY_TARGET=https://&lt;Domain_Name&gt;-my.sharepoint.net/&#34;
         restart: always
         ports:
           - target: 3000
@@ -256,22 +257,17 @@
   </div>
 
 
-<h2 id="2-建立備份任務">
-  2. 建立備份任務
-  <a href="#2-%e5%bb%ba%e7%ab%8b%e5%82%99%e4%bb%bd%e4%bb%bb%e5%8b%99" class="h-anchor" aria-hidden="true">#</a>
+<h2 id="3-建立備份任務">
+  3. 建立備份任務
+  <a href="#3-%e5%bb%ba%e7%ab%8b%e5%82%99%e4%bb%bd%e4%bb%bb%e5%8b%99" class="h-anchor" aria-hidden="true">#</a>
 </h2>
 <p>備份目的地：WebDAV<br>
-伺服器位址：http://127.0.0.1:3000/personal/<code>account_name</code>/Documents<br>
-使用者帳號：backup@wkopiaspupn.onmicrosoft.com<br>
-密碼：&lt;password&gt;<br>
-資料夾：輸入「伺服器位址」、「使用者帳號」、「密碼」後點擊會自動帶出<br>
-目錄資料夾：選擇後自動帶出</p>
-<p><img src="Hyper%20Backup%20%E5%82%99%E4%BB%BD%E5%88%B0%20Sharepoint%2051bb8ebfbc6c4e2b9cb2a7a5c83070fc/Untitled.png" alt="Untitled"></p>
-<h2 id="reference">
-  Reference
-  <a href="#reference" class="h-anchor" aria-hidden="true">#</a>
-</h2>
-<p><a href="https://rays-blog.de/2019/07/30/321/backup-to-microsoft-onedrive-for-business-sharepoint-with-synologys-hyper-backup/">Backup to Microsoft OneDrive for Business (SharePoint) with Synology’s Hyper Backup</a></p>
+伺服器位址：http://127.0.0.1:3000/personal/<code>&lt;UserName&gt;</code>_<code>&lt;Domain_Name&gt;</code>_onmicrosoft_com/Documents<br>
+使用者帳號：<code>&lt;UserName&gt;</code>@<code>&lt;Domain_Name&gt;</code>.onmicrosoft.com<br>
+密碼：自行輸入<br>
+資料夾：依序輸入「伺服器位址」、「使用者帳號」、「密碼」後如果驗證成功，點擊時會顯示選項<br>
+目錄資料夾：選擇完「資料夾」會自動帶出</p>
+<p><img src="/img/synohyperbksharepoint-hyperbackup.png" alt="synohyperbksharepoint-hyperbackup"></p>
 
     </div>
     
@@ -287,8 +283,8 @@
             
             
               <span class="button next">
-                <a href="https://blog.ty-wu.com/posts/rosconfigwg/">
-                  <span class="button__text">RotuerOS 設定 WireGuard VPN</span>
+                <a href="https://blog.ty-wu.com/posts/rosconfigdoh/">
+                  <span class="button__text">RotuerOS 設定 DNS over HTTPS</span>
                   <span class="button__icon">→</span>
                 </a>
               </span>

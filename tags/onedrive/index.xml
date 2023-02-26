@@ -10,7 +10,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <copyright>Copyright © 2022-2023 ty_wu | MIT License</copyright>
-    <lastBuildDate>Mon, 23 Jan 2023 19:59:42 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 26 Feb 2023 19:36:42 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.ty-wu.com/tags/onedrive/index.xml" rel="self" type="application/rss+xml" />
     
@@ -18,7 +18,7 @@
     <item>
       <title>Synology Hyper-Backup 備份到商務用 OneDrive</title>
       <link>https://blog.ty-wu.com/posts/synohyperbksharepoint/</link>
-      <pubDate>Mon, 23 Jan 2023 19:59:42 +0800</pubDate>
+      <pubDate>Sun, 26 Feb 2023 19:36:42 +0800</pubDate>
       
       <guid>https://blog.ty-wu.com/posts/synohyperbksharepoint/</guid>
       <description>
@@ -29,7 +29,7 @@
         
         
         
-          Synology 的備份軟體 Hyper Backup 原生沒有支援備份到商務用 OneDrive，想要備份就得另外想辦法，網路上找了一下，發現有解決方案， 是透過 WebDAV 加上在 Docker 中架設 Auth Proxy 的方式連接到商務用 OneDrive 做備份，簡單設定後就能備份了🥳
+          Synology 的備份軟體 Hyper Backup 原生沒有支援備份到商務用 OneDrive，想要備份就得另外想辦法，網路上找了一下，發現有解決方案， 在 Hyper Backup 選擇 WebDAV 方式，並在 Docker 中佈署 sharepoint-proxy 的方式連接到商務用 OneDrive 做備份，設定後就能使用了🥳
           
         
         </description>
