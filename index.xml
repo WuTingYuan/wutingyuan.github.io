@@ -10,10 +10,30 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <copyright>Copyright © 2022-2023 ty_wu | MIT License</copyright>
-    <lastBuildDate>Sun, 26 Feb 2023 19:36:42 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 04 Mar 2023 15:19:18 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.ty-wu.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>RotuerOS 設定 PPPoE Relay</title>
+      <link>https://blog.ty-wu.com/posts/rospppoerelay/</link>
+      <pubDate>Sat, 04 Mar 2023 15:19:18 +0800</pubDate>
+      
+      <guid>https://blog.ty-wu.com/posts/rospppoerelay/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          由於 RouterOS 本身沒有支援 PPPoE Relay 的功能，每次想更換 IP 都要打開 Winbox 重新撥接，覺得很麻煩，研究了一下使用 PPPoE Server + PPPoE Client 方式也能達成類似 PPPoE Relay 的方式，終於不用每次都要開 Winbox 手動重新波撥接了
+          
+        
+        </description>
+    </item>
     
     <item>
       <title>Synology Hyper-Backup 備份到商務用 OneDrive</title>

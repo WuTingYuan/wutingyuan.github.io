@@ -3,7 +3,7 @@
   <head>
     
       <title>
-        RotuerOS 設定 WireGuard VPN ::
+        RotuerOS 設定 PPPoE Relay ::
         我有一個地瓜酥他每天都在蘇
       </title>
     
@@ -11,14 +11,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content="新購了 RB5009UPr&#43;S&#43;IN 替換使用了 9 年的 RB450G，順便將 VPN 從 NAS 的 OpenVPN 切換到 RouterOS 的 Wireguard，嚐鮮一下新功能 RouterOS # CLI 建立 Wiregaurd 介面（Public Key 會自動產生"
+  content="由於 RouterOS 本身沒有支援 PPPoE Relay 的功能，每次想更換 IP 都要打開 Winbox 重新撥接，覺得很麻煩，研究了一下使用 PPPoE Server &#43; PPPoE Client 方式也能達成類似 PPPoE Relay 的方式，終於不用每次都"
 />
 <meta
   name="keywords"
   content=""
 />
 <meta name="robots" content="noodp" />
-<link rel="canonical" href="https://blog.ty-wu.com/posts/rosconfigwg/" />
+<link rel="canonical" href="https://blog.ty-wu.com/posts/rospppoerelay/" />
 
 
 
@@ -44,17 +44,17 @@
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="RotuerOS 設定 WireGuard VPN"/>
-<meta name="twitter:description" content="新購了 RB5009UPr&#43;S&#43;IN 替換使用了 9 年的 RB450G，順便將 VPN 從 NAS 的 OpenVPN 切換到 RouterOS 的 Wireguard，嚐鮮一下新功能"/>
+<meta name="twitter:title" content="RotuerOS 設定 PPPoE Relay"/>
+<meta name="twitter:description" content="由於 RouterOS 本身沒有支援 PPPoE Relay 的功能，每次想更換 IP 都要打開 Winbox 重新撥接，覺得很麻煩，研究了一下使用 PPPoE Server &#43; PPPoE Client 方式也能達成類似 PPPoE Relay 的方式，終於不用每次都要開 Winbox 手動重新波撥接了"/>
 
 
 
-<meta property="og:title" content="RotuerOS 設定 WireGuard VPN" />
-<meta property="og:description" content="新購了 RB5009UPr&#43;S&#43;IN 替換使用了 9 年的 RB450G，順便將 VPN 從 NAS 的 OpenVPN 切換到 RouterOS 的 Wireguard，嚐鮮一下新功能" />
+<meta property="og:title" content="RotuerOS 設定 PPPoE Relay" />
+<meta property="og:description" content="由於 RouterOS 本身沒有支援 PPPoE Relay 的功能，每次想更換 IP 都要打開 Winbox 重新撥接，覺得很麻煩，研究了一下使用 PPPoE Server &#43; PPPoE Client 方式也能達成類似 PPPoE Relay 的方式，終於不用每次都要開 Winbox 手動重新波撥接了" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.ty-wu.com/posts/rosconfigwg/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2023-01-14T15:32:12+08:00" />
-<meta property="article:modified_time" content="2023-01-14T15:32:12+08:00" /><meta property="og:site_name" content="我有一個地瓜酥他每天都在蘇" />
+<meta property="og:url" content="https://blog.ty-wu.com/posts/rospppoerelay/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-03-04T15:19:18+08:00" />
+<meta property="article:modified_time" content="2023-03-04T15:19:18+08:00" /><meta property="og:site_name" content="我有一個地瓜酥他每天都在蘇" />
 
 
 
@@ -157,11 +157,11 @@
   
 
   <article class="post">
-    <h1 class="post-title">RotuerOS 設定 WireGuard VPN</h1>
+    <h1 class="post-title">RotuerOS 設定 PPPoE Relay</h1>
     <div class="post-meta">
       
         <time class="post-date">
-          2023-01-14
+          2023-03-04
         </time>
 
         
@@ -182,9 +182,9 @@
         
           <a href="https://blog.ty-wu.com/tags/routeros/">#RouterOS</a>&nbsp;
         
-          <a href="https://blog.ty-wu.com/tags/wireguard/">#WireGuard</a>&nbsp;
+          <a href="https://blog.ty-wu.com/tags/pppoe/">#PPPoE</a>&nbsp;
         
-          <a href="https://blog.ty-wu.com/tags/vpn/">#VPN</a>&nbsp;
+          <a href="https://blog.ty-wu.com/tags/pppoe-relay/">#PPPoE Relay</a>&nbsp;
         
       </span>
     
@@ -193,12 +193,18 @@
 
     <div class="post-content">
       
-      <p>新購了 RB5009UPr+S+IN 替換使用了 9 年的 RB450G，順便將 VPN 從 NAS 的 OpenVPN 切換到 RouterOS 的 Wireguard，嚐鮮一下新功能</p>
-<p><img src="/img/rosconfigwg-topology.png" alt="Topology"></p>
+      <p>由於 RouterOS 本身沒有支援 PPPoE Relay 的功能，每次想更換 IP 都要打開 Winbox 重新撥接，覺得很麻煩，研究了一下使用 PPPoE Server + PPPoE Client 方式也能達成類似 PPPoE Relay 的方式，終於不用每次都要開 Winbox 手動重新波撥接了</p>
+<p><img src="/img/rospppoerelay-topology.png" alt="Topology"></p>
+<ul>
+<li>PPPoE Server 網段使用 10.10.1.0/24</li>
+<li>PPPoE Server IP 使用 10.10.1.254</li>
+<li>PC 撥接取得的 PPPoE IP 使用 10.10.1.1</li>
+<li>RouterOS 的 ether1-Wan 上連到小烏龜</li>
+</ul>
 <hr>
-<h2 id="routeros">
-  RouterOS
-  <a href="#routeros" class="h-anchor" aria-hidden="true">#</a>
+<h2 id="routeros---terminal">
+  RouterOS - Terminal
+  <a href="#routeros---terminal" class="h-anchor" aria-hidden="true">#</a>
 </h2>
 <ol>
 <li>
@@ -209,11 +215,18 @@
     <input id="1" type="checkbox" checked />
     <label for="1">
       <span class="collapsable-code__language">CLI</span>
-      <span class="collapsable-code__title">建立 Wiregaurd 介面（Public Key 會自動產生）</span>
+      <span class="collapsable-code__title">RouterOS 透過 PPPoE Client 連接到 Hinet</span>
       <span class="collapsable-code__toggle" data-label-expand="顯示" data-label-collapse="隱藏"></span>
     </label>
     <pre class="language-CLI" ><code>
-/interface wireguard add listen-port=51820 mtu=1420 name=wireguard1
+/interface pppoe-client \
+add \
+interface=ether1-Wan \
+name=pppoe-client \
+user=12345678@hinet.net
+
+# user 改成正確的 Hinet 撥接帳號
+# 新增完要開 Winbox 到 PPP -&gt; Interface 設定 PPPoE 密碼
 </code></pre>
   </div>
 
@@ -224,14 +237,18 @@
 
 
   <div class="collapsable-code">
-    <input id="764391258" type="checkbox" checked />
-    <label for="764391258">
+    <input id="751684293" type="checkbox" checked />
+    <label for="751684293">
       <span class="collapsable-code__language">CLI</span>
-      <span class="collapsable-code__title">開放 Firewall 允許存許 WireGuard</span>
+      <span class="collapsable-code__title">建立 Routing Table</span>
       <span class="collapsable-code__toggle" data-label-expand="顯示" data-label-collapse="隱藏"></span>
     </label>
     <pre class="language-CLI" ><code>
-/ip firewall filter add action=accept chain=input comment=WireGuard dst-port=51820 protocol=udp
+/routing table \
+add \
+disabled=no \
+fib \
+name=pppoe-tables
 </code></pre>
   </div>
 
@@ -242,15 +259,25 @@
 
 
   <div class="collapsable-code">
-    <input id="986234517" type="checkbox" checked />
-    <label for="986234517">
+    <input id="978512643" type="checkbox" checked />
+    <label for="978512643">
       <span class="collapsable-code__language">CLI</span>
-      <span class="collapsable-code__title">開放 Firewall 允許 WireGuard 網段到內網（雙向）</span>
+      <span class="collapsable-code__title">建立 Route</span>
       <span class="collapsable-code__toggle" data-label-expand="顯示" data-label-collapse="隱藏"></span>
     </label>
     <pre class="language-CLI" ><code>
-/ip firewall filter add action=accept chain=forward dst-address=192.168.1.0/24 src-address=10.0.0.0/24
-/ip firewall filter add action=accept chain=forward dst-address=10.0.0.0/24 src-address=192.168.1.0/24
+/ip route \
+add \
+check-gateway=none \
+disabled=no \
+distance=2 \
+dst-address=0.0.0.0/0 \
+gateway=pppoe-client \
+pref-src=&#34;&#34; \
+routing-table=pppoe-tables \
+scope=30 \
+suppress-hw-offload=no \
+target-scope=10
 </code></pre>
   </div>
 
@@ -261,14 +288,30 @@
 
 
   <div class="collapsable-code">
-    <input id="925163478" type="checkbox" checked />
-    <label for="925163478">
+    <input id="564978312" type="checkbox" checked />
+    <label for="564978312">
       <span class="collapsable-code__language">CLI</span>
-      <span class="collapsable-code__title">建立 WireGuard 網段 （設定完 network 會自動產升）</span>
+      <span class="collapsable-code__title">建立 PPPoE Server 設定檔</span>
       <span class="collapsable-code__toggle" data-label-expand="顯示" data-label-collapse="隱藏"></span>
     </label>
     <pre class="language-CLI" ><code>
-/ip address add address=10.0.0.0/24 interface=wireguard1
+/ppp profile \
+add \
+dns-server=168.95.1.1 \
+local-address=10.10.1.254 \
+name=pppoe-profile \
+on-down=&#34;/interface disable pppoe-client&#34; \
+on-up=&#34;/interface enable pppoe-client&#34; \
+only-one=yes \
+rate-limit=10m \
+remote-address=10.10.1.1 \
+use-compression=yes \
+use-encryption=no \
+use-ipv6=no \
+use-mpls=no
+
+# local-address 是 PPPoE Server 的 IP
+# remote-address 是 PC 撥接時取得的 IP
 </code></pre>
   </div>
 
@@ -279,85 +322,108 @@
 
 
   <div class="collapsable-code">
-    <input id="894237651" type="checkbox" checked />
-    <label for="894237651">
+    <input id="658134279" type="checkbox" checked />
+    <label for="658134279">
       <span class="collapsable-code__language">CLI</span>
-      <span class="collapsable-code__title">Client 設定完成後取得 Client 的 Public Key</span>
+      <span class="collapsable-code__title">建立 PPPoE Server</span>
       <span class="collapsable-code__toggle" data-label-expand="顯示" data-label-collapse="隱藏"></span>
     </label>
     <pre class="language-CLI" ><code>
-/interface wireguard peers add allowed-address=10.0.0.1/32 interface=wireguard1 public-key=&#34;&lt;Public Key&gt;&#34;
+/interface pppoe-server server \
+add \
+default-profile=pppoe-profile \
+disabled=no \
+interface=ether1-Wan \
+service-name=pppoe-server
+
+# service-name 是 PC 撥接用帳號
+# 新增完要開 Winbox 到 PPP -&gt; Secrets 設定 PC 撥接用密碼
+</code></pre>
+  </div>
+
+
+</li>
+<li>
+
+
+
+  <div class="collapsable-code">
+    <input id="321597486" type="checkbox" checked />
+    <label for="321597486">
+      <span class="collapsable-code__language">CLI</span>
+      <span class="collapsable-code__title">建立 PPPoE Server 連線帳號密碼</span>
+      <span class="collapsable-code__toggle" data-label-expand="顯示" data-label-collapse="隱藏"></span>
+    </label>
+    <pre class="language-CLI" ><code>
+/interface pppoe-server server \
+add \
+default-profile=pppoe-profile \
+disabled=no \
+interface=ether1-Wan \
+service-name=pppoe-server
+</code></pre>
+  </div>
+
+
+</li>
+<li>
+
+
+
+  <div class="collapsable-code">
+    <input id="763192584" type="checkbox" checked />
+    <label for="763192584">
+      <span class="collapsable-code__language">CLI</span>
+      <span class="collapsable-code__title">設定 NAT</span>
+      <span class="collapsable-code__toggle" data-label-expand="顯示" data-label-collapse="隱藏"></span>
+    </label>
+    <pre class="language-CLI" ><code>
+/ip firewall nat \
+add \
+action=dst-nat \
+chain=dstnat \
+dst-address-type=local \
+in-interface=pppoe-client \
+to-addresses=10.10.1.254
+
+/ip firewall nat \
+add \
+action=masquerade \
+chain=srcnat \
+dst-address-type=!local \
+ipsec-policy=out,none \
+out-interface=pppoe-client
+</code></pre>
+  </div>
+
+
+</li>
+<li>
+
+
+
+  <div class="collapsable-code">
+    <input id="745836921" type="checkbox" checked />
+    <label for="745836921">
+      <span class="collapsable-code__language">CLI</span>
+      <span class="collapsable-code__title">設定 Mangle</span>
+      <span class="collapsable-code__toggle" data-label-expand="顯示" data-label-collapse="隱藏"></span>
+    </label>
+    <pre class="language-CLI" ><code>
+/ip firewall mangle \
+add \
+action=mark-routing \
+chain=prerouting \
+dst-address-type=&#34;&#34; \
+new-routing-mark=pppoe-tables \
+passthrough=yes \
+src-address=10.10.1.0/24
 </code></pre>
   </div>
 
 
 </li>
 </ol>
-<hr>
-<h2 id="client">
-  Client
-  <a href="#client" class="h-anchor" aria-hidden="true">#</a>
-</h2>
-<ol>
-<li>
-
-
-
-  <div class="collapsable-code">
-    <input id="219487365" type="checkbox" checked />
-    <label for="219487365">
-      <span class="collapsable-code__language">Shell</span>
-      <span class="collapsable-code__title">產生 Private Key</span>
-      <span class="collapsable-code__toggle" data-label-expand="顯示" data-label-collapse="隱藏"></span>
-    </label>
-    <pre class="language-Shell" ><code>
-$ wg genkey
-</code></pre>
-  </div>
-
-
-</li>
-<li>
-
-
-
-  <div class="collapsable-code">
-    <input id="893572461" type="checkbox" checked />
-    <label for="893572461">
-      <span class="collapsable-code__language">Toml</span>
-      <span class="collapsable-code__title">wireguard.conf</span>
-      <span class="collapsable-code__toggle" data-label-expand="顯示" data-label-collapse="隱藏"></span>
-    </label>
-    <pre class="language-Toml" ><code>
-[Interface]
-PrivateKey = &lt;上一步產生的 Private Key&gt;
-Address = 10.0.0.1/32
-
-[Peer]
-PublicKey = &lt;RouterOS 的 WireGuard PublicKey&gt;
-AllowedIPs = 192.168.1.0/24
-Endpoint = example.com:51820
-</code></pre>
-  </div>
-
-
-</li>
-</ol>
-<hr>
-<h2 id="qa">
-  Q&amp;A
-  <a href="#qa" class="h-anchor" aria-hidden="true">#</a>
-</h2>
-<ul>
-<li>
-<p>怎麼將全部流量引導到 WireGuard VPN 上?<br>
-在 Client 的 wireguard.conf 中把 AllowedIPs 改成 0.0.0.0/0</p>
-</li>
-<li>
-<p>怎麼設定多個 Client?<br>
-第一個 Client 設定 10.0.0.1/32，第二個 Client 設定 10.0.0.2/32&hellip;依此類推</p>
-</li>
-</ul>
 
     </div>
     
@@ -371,17 +437,10 @@ Endpoint = example.com:51820
           </div>
           <div class="pagination__buttons">
             
-              <span class="button previous">
-                <a href="https://blog.ty-wu.com/posts/rosconsole/">
-                  <span class="button__icon">←</span>
-                  <span class="button__text">RouterOS 使用 USB Console</span>
-                </a>
-              </span>
-            
             
               <span class="button next">
-                <a href="https://blog.ty-wu.com/posts/test/">
-                  <span class="button__text">我有一個地瓜酥他每天都在蘇</span>
+                <a href="https://blog.ty-wu.com/posts/synohyperbksharepoint/">
+                  <span class="button__text">Synology Hyper-Backup 備份到商務用 OneDrive</span>
                   <span class="button__icon">→</span>
                 </a>
               </span>
