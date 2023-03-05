@@ -29,7 +29,7 @@
         
         
         
-          由於 RouterOS 本身沒有支援 PPPoE Relay 的功能，每次想更換 IP 都要打開 Winbox 重新撥接，覺得很麻煩，研究了一下使用 PPPoE Server + PPPoE Client 方式也能達成類似 PPPoE Relay 的方式，終於不用每次都要開 Winbox 手動重新波撥接了
+          由於 RouterOS 本身沒有支援 PPPoE Relay 的功能，每次想更換 IP 都要打開 Winbox 重新撥接，覺得很麻煩，研究了一下使用 PPPoE Server + PPPoE Client 方式也能達成類似 PPPoE Relay 的方式，終於不用每次都要開 Winbox 手動重新撥接了
           
         
         </description>

@@ -45,12 +45,12 @@
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="RotuerOS 設定 PPPoE Relay"/>
-<meta name="twitter:description" content="由於 RouterOS 本身沒有支援 PPPoE Relay 的功能，每次想更換 IP 都要打開 Winbox 重新撥接，覺得很麻煩，研究了一下使用 PPPoE Server &#43; PPPoE Client 方式也能達成類似 PPPoE Relay 的方式，終於不用每次都要開 Winbox 手動重新波撥接了"/>
+<meta name="twitter:description" content="由於 RouterOS 本身沒有支援 PPPoE Relay 的功能，每次想更換 IP 都要打開 Winbox 重新撥接，覺得很麻煩，研究了一下使用 PPPoE Server &#43; PPPoE Client 方式也能達成類似 PPPoE Relay 的方式，終於不用每次都要開 Winbox 手動重新撥接了"/>
 
 
 
 <meta property="og:title" content="RotuerOS 設定 PPPoE Relay" />
-<meta property="og:description" content="由於 RouterOS 本身沒有支援 PPPoE Relay 的功能，每次想更換 IP 都要打開 Winbox 重新撥接，覺得很麻煩，研究了一下使用 PPPoE Server &#43; PPPoE Client 方式也能達成類似 PPPoE Relay 的方式，終於不用每次都要開 Winbox 手動重新波撥接了" />
+<meta property="og:description" content="由於 RouterOS 本身沒有支援 PPPoE Relay 的功能，每次想更換 IP 都要打開 Winbox 重新撥接，覺得很麻煩，研究了一下使用 PPPoE Server &#43; PPPoE Client 方式也能達成類似 PPPoE Relay 的方式，終於不用每次都要開 Winbox 手動重新撥接了" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.ty-wu.com/posts/rospppoerelay/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-03-04T15:19:18+08:00" />
@@ -193,7 +193,7 @@
 
     <div class="post-content">
       
-      <p>由於 RouterOS 本身沒有支援 PPPoE Relay 的功能，每次想更換 IP 都要打開 Winbox 重新撥接，覺得很麻煩，研究了一下使用 PPPoE Server + PPPoE Client 方式也能達成類似 PPPoE Relay 的方式，終於不用每次都要開 Winbox 手動重新波撥接了</p>
+      <p>由於 RouterOS 本身沒有支援 PPPoE Relay 的功能，每次想更換 IP 都要打開 Winbox 重新撥接，覺得很麻煩，研究了一下使用 PPPoE Server + PPPoE Client 方式也能達成類似 PPPoE Relay 的方式，終於不用每次都要開 Winbox 手動重新撥接了</p>
 <p><img src="/img/rospppoerelay-topology.png" alt="rospppoerelay-topology"></p>
 <ul>
 <li>PPPoE Server 網段使用 10.10.1.0/24</li>
@@ -237,8 +237,8 @@ user=12345678@hinet.net
 
 
   <div class="collapsable-code">
-    <input id="542319867" type="checkbox" checked />
-    <label for="542319867">
+    <input id="342197658" type="checkbox" checked />
+    <label for="342197658">
       <span class="collapsable-code__language">CLI</span>
       <span class="collapsable-code__title">建立 Routing Table</span>
       <span class="collapsable-code__toggle" data-label-expand="顯示" data-label-collapse="隱藏"></span>
@@ -259,8 +259,8 @@ name=pppoe-tables
 
 
   <div class="collapsable-code">
-    <input id="345716298" type="checkbox" checked />
-    <label for="345716298">
+    <input id="275198463" type="checkbox" checked />
+    <label for="275198463">
       <span class="collapsable-code__language">CLI</span>
       <span class="collapsable-code__title">建立 Route</span>
       <span class="collapsable-code__toggle" data-label-expand="顯示" data-label-collapse="隱藏"></span>
@@ -288,8 +288,8 @@ target-scope=10
 
 
   <div class="collapsable-code">
-    <input id="698715234" type="checkbox" checked />
-    <label for="698715234">
+    <input id="258631749" type="checkbox" checked />
+    <label for="258631749">
       <span class="collapsable-code__language">CLI</span>
       <span class="collapsable-code__title">建立 PPPoE Server Profile</span>
       <span class="collapsable-code__toggle" data-label-expand="顯示" data-label-collapse="隱藏"></span>
@@ -322,8 +322,8 @@ use-mpls=no
 
 
   <div class="collapsable-code">
-    <input id="465123987" type="checkbox" checked />
-    <label for="465123987">
+    <input id="391864725" type="checkbox" checked />
+    <label for="391864725">
       <span class="collapsable-code__language">CLI</span>
       <span class="collapsable-code__title">建立 PPPoE Server Secret</span>
       <span class="collapsable-code__toggle" data-label-expand="顯示" data-label-collapse="隱藏"></span>
@@ -347,8 +347,8 @@ service=pppoe
 
 
   <div class="collapsable-code">
-    <input id="481297563" type="checkbox" checked />
-    <label for="481297563">
+    <input id="763548129" type="checkbox" checked />
+    <label for="763548129">
       <span class="collapsable-code__language">CLI</span>
       <span class="collapsable-code__title">建立 PPPoE Server</span>
       <span class="collapsable-code__toggle" data-label-expand="顯示" data-label-collapse="隱藏"></span>
@@ -370,8 +370,8 @@ service-name=pppoe-server
 
 
   <div class="collapsable-code">
-    <input id="615283794" type="checkbox" checked />
-    <label for="615283794">
+    <input id="637219854" type="checkbox" checked />
+    <label for="637219854">
       <span class="collapsable-code__language">CLI</span>
       <span class="collapsable-code__title">設定 NAT</span>
       <span class="collapsable-code__toggle" data-label-expand="顯示" data-label-collapse="隱藏"></span>
@@ -402,8 +402,8 @@ out-interface=pppoe-client
 
 
   <div class="collapsable-code">
-    <input id="874926351" type="checkbox" checked />
-    <label for="874926351">
+    <input id="324981576" type="checkbox" checked />
+    <label for="324981576">
       <span class="collapsable-code__language">CLI</span>
       <span class="collapsable-code__title">設定 Mangle</span>
       <span class="collapsable-code__toggle" data-label-expand="顯示" data-label-collapse="隱藏"></span>
