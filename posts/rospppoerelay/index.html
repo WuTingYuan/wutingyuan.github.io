@@ -225,8 +225,8 @@ interface=ether1-Wan \
 name=pppoe-client \
 user=12345678@hinet.net
 
-# user 改成正確的 Hinet 撥接帳號
-# 新增完要開 Winbox 到 PPP -&gt; Interface 設定 PPPoE 密碼
+# user 改成 Hinet 撥接帳號
+# 新增完要開 Winbox 到 PPP -&gt; Interface -&gt; Dial Out 中將 Password 設定 Hinet 撥接密碼
 </code></pre>
   </div>
 
@@ -237,8 +237,8 @@ user=12345678@hinet.net
 
 
   <div class="collapsable-code">
-    <input id="834715962" type="checkbox" checked />
-    <label for="834715962">
+    <input id="542319867" type="checkbox" checked />
+    <label for="542319867">
       <span class="collapsable-code__language">CLI</span>
       <span class="collapsable-code__title">建立 Routing Table</span>
       <span class="collapsable-code__toggle" data-label-expand="顯示" data-label-collapse="隱藏"></span>
@@ -259,8 +259,8 @@ name=pppoe-tables
 
 
   <div class="collapsable-code">
-    <input id="642759831" type="checkbox" checked />
-    <label for="642759831">
+    <input id="345716298" type="checkbox" checked />
+    <label for="345716298">
       <span class="collapsable-code__language">CLI</span>
       <span class="collapsable-code__title">建立 Route</span>
       <span class="collapsable-code__toggle" data-label-expand="顯示" data-label-collapse="隱藏"></span>
@@ -288,8 +288,8 @@ target-scope=10
 
 
   <div class="collapsable-code">
-    <input id="531964728" type="checkbox" checked />
-    <label for="531964728">
+    <input id="698715234" type="checkbox" checked />
+    <label for="698715234">
       <span class="collapsable-code__language">CLI</span>
       <span class="collapsable-code__title">建立 PPPoE Server Profile</span>
       <span class="collapsable-code__toggle" data-label-expand="顯示" data-label-collapse="隱藏"></span>
@@ -322,8 +322,8 @@ use-mpls=no
 
 
   <div class="collapsable-code">
-    <input id="532189476" type="checkbox" checked />
-    <label for="532189476">
+    <input id="465123987" type="checkbox" checked />
+    <label for="465123987">
       <span class="collapsable-code__language">CLI</span>
       <span class="collapsable-code__title">建立 PPPoE Server Secret</span>
       <span class="collapsable-code__toggle" data-label-expand="顯示" data-label-collapse="隱藏"></span>
@@ -335,7 +335,8 @@ name=pppoe-secret \
 profile=pppoe-profile \
 service=pppoe
 
-# 新增完要開 Winbox 到 PPP -&gt; Secrets 設定 PC 撥接用密碼
+# name 是 PC 撥接用帳號
+# 新增完要開 Winbox 到 PPP -&gt; Secrets 設定 password
 </code></pre>
   </div>
 
@@ -346,8 +347,8 @@ service=pppoe
 
 
   <div class="collapsable-code">
-    <input id="514962783" type="checkbox" checked />
-    <label for="514962783">
+    <input id="481297563" type="checkbox" checked />
+    <label for="481297563">
       <span class="collapsable-code__language">CLI</span>
       <span class="collapsable-code__title">建立 PPPoE Server</span>
       <span class="collapsable-code__toggle" data-label-expand="顯示" data-label-collapse="隱藏"></span>
@@ -359,8 +360,6 @@ default-profile=pppoe-profile \
 disabled=no \
 interface=ether1-Wan \
 service-name=pppoe-server
-
-# service-name 是 PC 撥接用帳號
 </code></pre>
   </div>
 
@@ -371,8 +370,8 @@ service-name=pppoe-server
 
 
   <div class="collapsable-code">
-    <input id="438257169" type="checkbox" checked />
-    <label for="438257169">
+    <input id="615283794" type="checkbox" checked />
+    <label for="615283794">
       <span class="collapsable-code__language">CLI</span>
       <span class="collapsable-code__title">設定 NAT</span>
       <span class="collapsable-code__toggle" data-label-expand="顯示" data-label-collapse="隱藏"></span>
@@ -403,8 +402,8 @@ out-interface=pppoe-client
 
 
   <div class="collapsable-code">
-    <input id="257164389" type="checkbox" checked />
-    <label for="257164389">
+    <input id="874926351" type="checkbox" checked />
+    <label for="874926351">
       <span class="collapsable-code__language">CLI</span>
       <span class="collapsable-code__title">設定 Mangle</span>
       <span class="collapsable-code__toggle" data-label-expand="顯示" data-label-collapse="隱藏"></span>
